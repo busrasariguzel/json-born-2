@@ -21,7 +21,7 @@ if(func === 'GET'){
 
 
 if (func === 'POST'){
-    fs.writeFile('./users.json', function(error, data) {
+    fs.writeFile('./users.json', function(data) {
         let newUser = {
         "index": users.length,
         "age": process.argv[5],
@@ -29,6 +29,11 @@ if (func === 'POST'){
         "name": process.argv[6],
         "friends":[],
         },
+
+
+        if (uARGV === 'user') {
+            newUser[index].user.push('name')
+        }
 
 
 }
