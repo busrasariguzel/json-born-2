@@ -1,11 +1,21 @@
-const fs = require('fs')
-// const input1= process.argv[2]
-let data = JSON.stringify(users, null, 2)
+const fs = require('fs');
 
-let rawData = fs.readFile('./users.json', (err, data) =>{
-if (err) throw err;
-console.log(data)
-let users = JSON.parse(rawData)
+const func = process.argv[2];
+const uARGV = process.argv[3];
+const index = process.argv[4]
 
-console.log(users)
-})
+
+if(func === 'GET'){
+    fs.readFile('./users.json', function(error, data) {
+        const users = JSON.parse(data);
+
+        if (uARGV === 'users') {
+            console.log(users)
+        } else if (uARGV === 'user') {
+            console.log(users[index])
+        } else if (uARGV === 'friends') {
+            console.log(users[index].friends)
+        }
+    })
+} 
+
