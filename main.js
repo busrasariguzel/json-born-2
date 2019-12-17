@@ -8,7 +8,6 @@ const index = process.argv[4]
 if(func === 'GET'){
     fs.readFile('./users.json', function(error, data) {
         const users = JSON.parse(data);
-
         if (uARGV === 'users') {
             console.log(users)
         } else if (uARGV === 'user') {
@@ -16,6 +15,19 @@ if(func === 'GET'){
         } else if (uARGV === 'friends') {
             console.log(users[index].friends)
         }
+        else if (error) {throw error;}
     })
 } 
 
+
+if (func === 'POST'){
+    fs.readFile('./users.json', function(error, data) {
+        let newUser = {
+        "index": 
+        "age": 
+        "eyeColor": 
+        "name": 
+        "friends":[],
+        }
+}
+}
