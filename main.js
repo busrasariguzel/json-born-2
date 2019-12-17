@@ -21,13 +21,15 @@ if(func === 'GET'){
 
 
 if (func === 'POST'){
-    fs.readFile('./users.json', function(error, data) {
+    fs.writeFile('./users.json', function(error, data) {
         let newUser = {
-        "index": 
-        "age": 
-        "eyeColor": 
-        "name": 
+        "index": users.length,
+        "age": process.argv[5],
+        "eyeColor": process.argv[5],
+        "name": process.argv[6],
         "friends":[],
-        }
+        },
+
+
 }
 }
